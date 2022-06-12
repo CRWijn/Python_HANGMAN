@@ -43,8 +43,11 @@ class start_hangman:
             os.system("CLS")
             self.print_game_status()
             guess = input("Guess a letter or word: ").lower()
+            if guess == '':
+                continue
             if len(guess) > 1:
                 if guess == self.word:
+                    os.system("CLS")
                     self.update_output(False, guess, guess)
                     self.print_game_status()
                     return True
